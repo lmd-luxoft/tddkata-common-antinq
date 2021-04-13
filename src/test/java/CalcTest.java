@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalcTest {
 
     public Calc calc;
+    public int expectedSumResult;
+    public String inputExpression;
 
     @BeforeEach
     public void preconditions(){
@@ -14,43 +16,59 @@ public class CalcTest {
 
     @Test
     public void zeroNumbersSumTest(){
-        assertEquals(0, calc.sum(""));
+        expectedSumResult = 0;
+        inputExpression = "";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
-
 
     @Test
     public void oneNumberSumTest(){
-        assertEquals(5, calc.sum("5"));
+        expectedSumResult = 5;
+        inputExpression = "5";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
     @Test
     public void oneNumberAndComaSumTest(){
-        assertEquals(8, calc.sum("8,"));
+        expectedSumResult = 8;
+        inputExpression = "8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
     @Test
     public void twoNumbersSumTest(){
-        assertEquals(12, calc.sum("6,5"));
+        expectedSumResult = 11;
+        inputExpression = "6,5";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
     @Test()
     public void incorrectNullInputSumTest(){
-        assertEquals(-1, calc.sum(null));
+        expectedSumResult = -1;
+        inputExpression = null;
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
     @Test()
     public void incorrectFirstNumberSumTest(){
-        assertEquals(-1, calc.sum("xx,8"));
+        expectedSumResult = -1;
+        inputExpression = "xx,8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
     @Test()
     public void incorrectSecondNumberSumTest(){
-        assertEquals(-1, calc.sum("45,o"));
+        expectedSumResult = -1;
+        inputExpression = "45,o";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+
     }
 
     @Test()
     public void incorrectDelimiterSumTest(){
-        assertEquals(-1, calc.sum("12:8"));
+        expectedSumResult = -1;
+        inputExpression = "12:8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
 }
