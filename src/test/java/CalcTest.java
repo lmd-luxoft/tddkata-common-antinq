@@ -31,7 +31,7 @@ public class CalcTest {
     @Test
     public void oneNumberAndComaSumTest(){
         expectedSumResult = 8;
-        inputExpression = "8";
+        inputExpression = "8,";
         assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
@@ -39,6 +39,14 @@ public class CalcTest {
     public void twoNumbersSumTest(){
         expectedSumResult = 11;
         inputExpression = "6,5";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
+
+    @Test()
+    public void fiveNumbersSumTest(){
+        expectedSumResult = 488;
+        inputExpression = "12,8,5,455,8";
         assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
