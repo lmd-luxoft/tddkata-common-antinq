@@ -34,10 +34,23 @@ public class CalcTest {
     }
 
     @Test()
-    public void incorrectInputDataSumTest(){
-        Exception exception = assertThrows(Exception.class, () ->
-                calc.sum("xx,l"));
-        assertEquals("Incorrect input data", exception);
+    public void incorrectNullInputSumTest(){
+        assertEquals(-1, calc.sum(null));
+    }
+
+    @Test()
+    public void incorrectFirstNumberSumTest(){
+        assertEquals(-1, calc.sum("xx,8"));
+    }
+
+    @Test()
+    public void incorrectSecondNumberSumTest(){
+        assertEquals(-1, calc.sum("45,o"));
+    }
+
+    @Test()
+    public void incorrectDelimiterSumTest(){
+        assertEquals(-1, calc.sum("12:8"));
     }
 
 }
