@@ -94,6 +94,13 @@ public class CalcTest {
     }
 
     @Test()
+    public void incorrectDelimiterSlashNCommaSumTest(){
+        expectedSumResult = -1;
+        inputExpression = "12\n,8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
+    @Test()
     public void incorrectDelimiterSlashNDoubledSumTest(){
         expectedSumResult = -1;
         inputExpression = "12\n\n8";
