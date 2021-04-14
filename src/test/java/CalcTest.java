@@ -79,4 +79,25 @@ public class CalcTest {
         assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
+    @Test()
+    public void delimiterSlashNSumTest(){
+        expectedSumResult = 34;
+        inputExpression = "12\n22";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
+    @Test()
+    public void delimiterSlashNAndCommaSumTest(){
+        expectedSumResult = 40;
+        inputExpression = "12\n22,8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
+    @Test()
+    public void incorrectDelimiterSlashNDoubledSumTest(){
+        expectedSumResult = -1;
+        inputExpression = "12\n\n8";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
 }
