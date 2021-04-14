@@ -88,7 +88,7 @@ public class CalcTest {
 
     @Test()
     public void delimiterSlashNAndCommaSumTest(){
-        expectedSumResult = 40;
+        expectedSumResult = 42;
         inputExpression = "12\n22,8";
         assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
