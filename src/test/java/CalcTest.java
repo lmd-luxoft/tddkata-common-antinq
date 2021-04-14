@@ -107,4 +107,18 @@ public class CalcTest {
         assertEquals(expectedSumResult, calc.sum(inputExpression));
     }
 
+    @Test()
+    public void randomDelimiterSumTest(){
+        expectedSumResult = 72;
+        inputExpression = "//;ohg\n12;ohg15;ohg45";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
+    @Test()
+    public void incorrectRandomDelimiterSumTest(){
+        expectedSumResult = -1;
+        inputExpression = "//ohg\n10;15;45";
+        assertEquals(expectedSumResult, calc.sum(inputExpression));
+    }
+
 }
